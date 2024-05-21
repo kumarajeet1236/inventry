@@ -1,0 +1,18 @@
+version: "3.7"
+services:
+  node:
+    container_name: inventry-service
+    build:
+      context: ./
+      dockerfile: ./Dockerfile
+    image: inventry-node:latest
+    environment:
+      POSTGRES_HOST: localhost
+      POSTGRES_USERNAME: root
+      POSTGRES_PASSWORD: root
+      POSTGRES_PORT: 5432
+      POSTGRES_DATABASE: inventory-db
+    env_file:
+      - .env
+      
+    
